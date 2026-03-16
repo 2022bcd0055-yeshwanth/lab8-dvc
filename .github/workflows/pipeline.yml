@@ -19,7 +19,7 @@ jobs:
 
   - name: Install dependencies
     run: |
-      pip install dvc dvc-s3 pandas scikit-learn
+      pip install "dvc[s3]==3.51.0" pandas==2.2.2 scikit-learn==1.5.1
 
   - name: Configure AWS
     run: |
