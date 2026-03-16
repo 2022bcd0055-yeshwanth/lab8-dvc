@@ -26,7 +26,6 @@ model.fit(X_train, y_train)
 # Predict
 pred = model.predict(X_test)
 
-# Metrics
 rmse = mean_squared_error(y_test, pred) ** 0.5
 r2 = r2_score(y_test, pred)
 
