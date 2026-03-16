@@ -6,6 +6,9 @@ from sklearn.metrics import root_mean_squared_error, r2_score
 # Load dataset
 df = pd.read_csv("data/housing.csv")
 
+# Handle missing values
+df = df.fillna(df.mean(numeric_only=True))
+
 # Convert categorical column to numeric
 df = pd.get_dummies(df, columns=["ocean_proximity"])
 
@@ -20,7 +23,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
 model = LinearRegression()
 model.fit(X_train, y_train)
 
-# Predictions
+# Predict
 pred = model.predict(X_test)
 
 # Metrics
